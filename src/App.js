@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
+import Recipe from './components/Recipe';
 
 function App() {
 	const APP_ID = 'f894dbb7';
@@ -27,6 +28,13 @@ function App() {
 					Search
 				</button>
 			</form>
+			{recipes.map(recipe => (
+				<Recipe
+					title={recipe.recipe.label}
+					calories={recipe.recipe.calories}
+					image={recipe.recipe.image}
+				/>
+			))}
 		</div>
 	);
 }
